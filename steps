@@ -1,5 +1,5 @@
 create new rails app
-add gems to Gemfile (monban, strong_parameters)
+add gems to Gemfile (monban 0.0.6, strong_parameters 0.2.0)
 bundle
 generate monban scaffold
 remove index.html
@@ -7,6 +7,7 @@ routes - root(homes)
 homes_controller.rb
 show action
 show template
+
 layout - signed_in conditional
 migration - username to users
 add username to users#new form
@@ -15,13 +16,15 @@ forbidden_attributes_initializer
 homescontroller - before_filter (redirect to dashboard if signed in)
 dashboard - route, controller, template
 div around user logic in layout
+
 generate shout model (belongs to user)
 remove attr_accessible
 form for shout on dashboard
 shouts create redirect to dashboard
 create action shouts_controller.rb
-style dashboard
 shout partial
+style dashboard
+
 link created_at
 link username to user
 scope shouts order

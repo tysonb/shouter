@@ -10,7 +10,7 @@ class Shout < ActiveRecord::Base
 # BUT default scopes are evil
 # so you can use a normal scope
 # Note that the -> operator is a 'lambda literal'
-  scope :ordered, -> { order("created_at DESC") }
+  scope :ordered, -> { order('created_at DESC') }
 
 # scopes are a subset of a collection
 # Could also use a class method:
