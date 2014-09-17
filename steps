@@ -13,19 +13,24 @@ migration - username to users
 add username to users#new form
 application.rb - turn off whitelisting
 forbidden_attributes_initializer
+
 homescontroller - before_filter (redirect to dashboard if signed in)
+homescontroller - redirect to dashboard if signed in
 dashboard - route, controller, template
 div around user logic in layout
 
 generate shout model (belongs to user)
 remove attr_accessible
 form for shout on dashboard
+user has many shouts
+
 shouts create redirect to dashboard
 create action shouts_controller.rb
 shout partial
 style dashboard
 
-link created_at
-link username to user
+link created_at to shout show page
+link username to user show page
+link username on layout back to dashboard
 scope shouts order
 validate shout body, flash alert
