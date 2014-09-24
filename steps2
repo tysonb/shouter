@@ -1,0 +1,13 @@
+rails g model TextShout body (remove timestamps line)
+rake db:migrate
+rails g migration MakeShoutsPolymorphic (open file and fill in) 
+rails c (run Shout.destroy_all to empty db)
+rake db:migrate
+in dashboards show page change form from @shout to @text_shout (also update dashboards controller#show)
+create text_shouts_controller.rb w/ a create action (move code over from shouts controller and modify it as needed)
+  - create build_content private method
+remove body validation from shout model
+in shouts partial change 'shout.body' to 'render shout.content'
+create views directory for text_shouts and create partial _text_shout.html.erb (prints out text_shout body)
+
+21:25
