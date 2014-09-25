@@ -3,6 +3,7 @@ rake db:migrate
 rails g migration MakeShoutsPolymorphic (open file and fill in) 
 rails c (run Shout.destroy_all to empty db)
 rake db:migrate
+
 in dashboards show page change form from @shout to @text_shout (also update dashboards controller#show)
 create text_shouts_controller.rb w/ a create action (move code over from shouts controller and modify it as needed)
   - create build_content private method
@@ -10,4 +11,24 @@ remove body validation from shout model
 in shouts partial change 'shout.body' to 'render shout.content'
 create views directory for text_shouts and create partial _text_shout.html.erb (prints out text_shout body)
 
-21:25
+add paperclip 3.4.0 to Gemfile
+bundle
+  (will need to brew install imagemagick)
+add to config/environments/development.rb:  Paperclip.options[:command_path] = '/usr/local/bin/'
+restart Webrick
+rails g model PhotoShout image:attachment
+remove timestamps from PhotoShout migration file
+rake db:migrate
+check schema (db/schema.rb)
+
+add photo_shout form to dashboards show view
+add @photo_shout instance variable in dashboards model show action
+add photo_shouts_path to routes (create)
+add photo shouts controller (copy code from text shouts controller and modify)
+in PhotoShout model replace attr_accessible line with has_attached_file (Paperclip - add styles)
+
+restart Webrick
+make dir app/views/photo_shouts/
+create a photo_shout partial
+
+28:00

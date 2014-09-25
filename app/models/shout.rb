@@ -22,4 +22,6 @@ class Shout < ActiveRecord::Base
 # to @shouts = current_user.shouts
 # in Dashboards Controller, and it would work
   belongs_to :content, polymorphic: true
+
+  validates_associated :content
 end
